@@ -1,26 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(){
+    super();
+
+    this.state={
+      inputCatcher:[]
+    }
+  }
+  render(){
+    return (
+      <div className="App">
+        <div className="row justify-content-md-center align-items-center row-container">
+          <div className="col-md-8">
+            <h1>setState() in React</h1>
+            <div className="card">
+              <form>
+                <div className="form-group">
+                  <input type="text" className="form-control" id="formGroupExampleInput" onChange={(change)=>{
+                    this.setState({inputCatcher:change.target.value});
+                    console.log(this.state.inputCatcher);
+                    }}>
+                  </input>
+                  <p className="para">{this.state.inputCatcher}</p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+  
+  
+      </div>
+    );
+  }
+  
 }
 
 export default App;

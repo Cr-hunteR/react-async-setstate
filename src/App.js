@@ -20,8 +20,8 @@ class App extends React.Component {
               <form>
                 <div className="form-group">
                   <input type="text" className="form-control" id="formGroupExampleInput" onChange={(change)=>{
-                    this.setState({inputCatcher:change.target.value});
-                    console.log(this.state.inputCatcher);//Console output
+                    this.setState({inputCatcher:change.target.value},()=>console.log(this.state.inputCatcher));
+                    //Console output
                     }}>
                   </input>
                   <p className="para">{this.state.inputCatcher}</p>{/* Main output */}
